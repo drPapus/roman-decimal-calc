@@ -60,7 +60,7 @@ function calculator(str) {
 
  
     function calcNum(a,b,oper) { 
-        result = eval(a + oper + b) 
+        result = Math.floor(eval(a + oper + b)) 
         return result
     }
 
@@ -71,7 +71,7 @@ function calculator(str) {
 
 //console.log(num)
 
-
+console.log(calculator('5 / 4')); // вернется строка '1'
 console.log(calculator('8 / 2')); // вернется строка '4'
 console.log(calculator('10 + 2')); // вернется строка '3'
 console.log(calculator('V / IV')); // вернется строка 'II'
