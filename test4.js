@@ -1,20 +1,24 @@
 const pattern = /^(M{1,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|C?D|D?C{1,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|X?L|L?X{1,3})(IX|IV|V?I{0,3})|M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|I?V|V?I{1,3}))$/
 
 
-function calculator(str) {
+function calculate(str) {
 
 
     list = str.split(' ')
+    
+  
 
 
     let a = list[0]
     let oper = list[1]
     let b = list[2]
     let num;
+   
 
      if(list.length > 3){
-       return 'throws Error'
+       return console.log('Error')
      }
+
 
     function fromRoman(rString) {
         let result = 0;
@@ -50,38 +54,32 @@ function calculator(str) {
         a = fromRoman(a)
         b = fromRoman(b)
 
-        num = toRoman(calcNum(a, b, oper))
- 
+        num = console.log(toRoman(calcNum(a, b, oper)))
+         
     } else if(!isNaN(a) && !isNaN(b)){
-       num = calcNum(a,b,oper)
+       num = console.log(calcNum(a,b, oper))
     } else{
-        return 'throws Error'
+        return console.log('Error')
     }
-
  
     function calcNum(a,b,oper) { 
-        result = Math.floor(eval(a + oper + b))
+        result = Math.floor(eval(a + oper + b)).toString()
         return result
     }
 
   
    
-    return num.toString()
+    return num
 }
 
 //console.log(num)
 
-console.log(calculator('5 / 4')); // вернется строка '1'
-console.log(calculator('8 / 2')); // вернется строка '4'
-console.log(calculator('10 + 2')); // вернется строка '3'
-console.log(calculator('V / IV')); // вернется строка 'II'
-console.log(calculator('VI / II')); // вернется строка 'III'
-console.log(calculator('X - III')); // вернется строка '7'
-console.log(calculator('1 + 2')); // вернется строка '3'
-console.log(calculator('VI / III')); // вернется строка 'II'
-console.log(calculator('VII / III')); // вернётся строка II'
-console.log(calculator('I + II')); // вернется строка 'III'
-console.log(calculator('I - II')); // вернётся строка '' (пустая строка) т.к. в римской системе нет отрицательных чисел
-console.log(calculator('I + 1')); // вернётся исключение (ошибка) throws Error т.к. используются одновременно разные системы счисления
-console.log(calculator('I')); // вернётся исключение throws Error т.к. строка не является математической операцией
-console.log(calculator('1 + 1 + 1')); // вернётся исключение throws Error т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)
+calculate('1 + 2'); // вернется строка '3'
+calculate('VI / III'); // вернется строка 'II'
+calculate('VII / III'); // вернётся строка II'
+calculate('I + II'); // вернется строка 'III'
+calculate('I - II'); // вернётся строка '' (пустая строка) т.к. в римской системе нет отрицательных чисел
+calculate('I + 1'); // вернётся исключение (ошибка) throws Error т.к. используются одновременно разные системы счисления
+calculate('I'); // вернётся исключение throws Error т.к. строка не является математической операцией
+calculate('1 + 1 + 1'); // вернётся исключение throws Error т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)
+
