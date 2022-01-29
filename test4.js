@@ -2,23 +2,15 @@ const pattern = /^(M{1,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})|M{0,4}
 
 
 function calculate(str) {
-
-
     list = str.split(' ')
-    
-  
-
-
     let a = list[0]
     let oper = list[1]
     let b = list[2]
     let num;
-   
 
      if(list.length > 3){
        return console.log('Error')
      }
-
 
     function fromRoman(rString) {
         let result = 0;
@@ -66,13 +58,9 @@ function calculate(str) {
         result = Math.floor(eval(a + oper + b)).toString()
         return result
     }
-
-  
    
     return num
 }
-
-//console.log(num)
 
 calculate('1 + 2'); // вернется строка '3'
 calculate('VI / III'); // вернется строка 'II'
