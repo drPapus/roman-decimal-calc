@@ -18,8 +18,8 @@ function calculator(str) {
 
     function fromRoman(rString) {
         let result = 0;
-        const decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-        const roman = ['M', 'CM','D','CD','C', 'XC', 'L', 'XL', 'X','IX','V','IV','I'];
+        const decimal = [ 10, 9, 5, 4, 1];
+        const roman = ['X','IX','V','IV','I'];
     
         for (let i = 0; i <= decimal.length; i++) {
           while (rString.indexOf(roman[i]) === 0){
@@ -33,8 +33,8 @@ function calculator(str) {
 
     function toRoman(dNumber) {
         let result = '';
-        const decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-        const roman = ['M', 'CM','D','CD','C', 'XC', 'L', 'XL', 'X','IX','V','IV','I'];
+        const decimal = [ 10, 9, 5, 4, 1];
+        const roman = ['X','IX','V','IV','I'];
     
         for (let i = 0; i <= decimal.length; i++) {
           while (dNumber % decimal[i] < dNumber) {
