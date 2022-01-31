@@ -44,7 +44,7 @@ function calculator(str) {
         return result;
       }
 
-    if(pattern.test(a) == true && pattern.test(b) == true){
+    if(pattern.test(a) && pattern.test(b)){
         a = fromRoman(a)
         b = fromRoman(b)
 
